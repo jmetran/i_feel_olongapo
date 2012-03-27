@@ -1,0 +1,12 @@
+- initialize_meta(:title => "Home", :keywords => "home", :description => "this is a home page")
+= link_to "Home", "/"
+= link_to "New", new_location_path
+%p{ :id => "notice"}= notice
+%h1 locations
+
+- for location in @locations
+    = location.name + parent_location = location.parent_location.nil? ? "" : ", #{location.parent_location.name}"
+    = link_to "Edit", edit_location_path(location)
+    = link_to "Show", location
+    <br>
+= paginate @locations

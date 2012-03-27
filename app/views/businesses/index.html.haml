@@ -1,0 +1,16 @@
+- initialize_meta(:title => "Home", :keywords => "home", :description => "this is a home page")
+= link_to "Home", "/"
+= link_to "New", new_business_path
+%p{ :id => "notice"}= notice
+%h1 Businesses
+= form_tag businesses_path, :method  => :get do
+    = text_field_tag :q, params[:q]
+    = submit_tag "Search", name:nil
+
+- for business in @businesses
+    = business.name
+    = link_to "Edit", edit_business_path(business)
+    = link_to "Show", business
+    = link_to "Delete", business, :confirm => 'Are you sure?', :method => :delete, :class => 'alert'
+    <br>
+= paginate @businesses

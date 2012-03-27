@@ -1,0 +1,22 @@
+= form_for @business do |f|
+  -if @business.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@business.errors.count, "error") + " prohibited this role from being saved:"
+      %ul
+        - @business.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.label :name
+  = f.text_field :name, :maxlength => 150
+  <br>
+  = f.label :trade_name
+  = f.text_field :trade_name, :maxlength => 150
+  <br>
+  = f.label :status
+  = f.text_field :status, :maxlength => 150
+  <br>
+  = f.label :location_id
+  = f.collection_select(:location_id, Location.location_collections, :id, :name, options ={:prompt=> "Select Location"})
+  <br>
+  = f.submit

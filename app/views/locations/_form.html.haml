@@ -1,0 +1,22 @@
+= form_for @location do |f|
+  -if @location.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@location.errors.count, "error") + " prohibited this role from being saved:"
+      %ul
+        - @location.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.label :name
+  = f.text_field :name, :maxlength => 50
+  %br
+  = f.label :location_type
+  = f.select :location_type, %w[Municipality City Province Country], {:prompt => "Select Location Type"}
+  %br
+  = f.label :parent
+  = f.collection_select(:parent_id, Location.location_collections(@location.id), :id, :name, options ={:prompt=> "Select Parent Location"})
+  %br
+  = f.label :zip_code
+  = f.text_field :zip_code, :maxlength => 4
+  %br
+  = f.submit

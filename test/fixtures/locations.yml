@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  location_type: MyString
+  zip_code: 1
+  parent_id: 1
+  permalink: MyString
+  display_name: MyString
+
+two:
+  name: MyString
+  location_type: MyString
+  zip_code: 1
+  parent_id: 1
+  permalink: MyString
+  display_name: MyString
