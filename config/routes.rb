@@ -1,5 +1,7 @@
 IFeelOlongapo::Application.routes.draw do
 
+  get "categories/index"
+
   devise_for :users
 
   #resources :user, :only => [:index, :delete, :create, :update]
@@ -7,6 +9,7 @@ IFeelOlongapo::Application.routes.draw do
     get 'page/:page', :action => :index, :on => :collection
   end
 
+  resources :categories
   resources :locations
   root :to => "home#index"
 

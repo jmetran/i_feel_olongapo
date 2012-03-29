@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-    respond_with(@locations)
+    respond_with(@location)
   end
 
   def edit; end

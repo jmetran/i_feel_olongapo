@@ -18,5 +18,13 @@
   <br>
   = f.label :location_id
   = f.collection_select(:location_id, Location.location_collections, :id, :name, options ={:prompt=> "Select Location"})
-  <br>
+  %br
+  Categories
+  %br
+  - for category in Category.all
+    = check_box_tag 'business[category_ids][]', category.id, @business.categories.include?(category)
+    = category.name
+    %br
+  = hidden_field_tag 'business[category_ids][]', ''
+
   = f.submit

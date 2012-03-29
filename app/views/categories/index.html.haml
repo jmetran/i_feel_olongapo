@@ -1,0 +1,13 @@
+- initialize_meta(:title => "Home", :keywords => "home", :description => "this is a home page")
+= link_to "Home", "/"
+= link_to "New", new_category_path
+%p{ :id => "notice"}= notice
+%h1 Categories
+
+- for category in @categories
+    = category.name
+    = link_to "Edit", edit_category_path(category)
+    = link_to "Show", category
+    = link_to "Delete", category, :confirm => 'Are you sure?', :method => :delete, :class => 'alert'
+    <br>
+= paginate @categories

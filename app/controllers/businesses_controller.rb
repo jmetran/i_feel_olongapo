@@ -9,7 +9,7 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    respond_with(@businesses)
+    respond_with(@business)
   end
 
   def edit; end
@@ -41,7 +41,7 @@ class BusinessesController < ApplicationController
   protected
 
   def find_business
-    @business = Business.find(params[:id])
+    @business = Business.find(params[:id], :include => :categories)
   end
 
 end

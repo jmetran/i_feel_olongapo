@@ -8,5 +8,6 @@
     = location.name + parent_location = location.parent_location.nil? ? "" : ", #{location.parent_location.name}"
     = link_to "Edit", edit_location_path(location)
     = link_to "Show", location
+    = link_to "Delete", location, :confirm => 'Are you sure?', :method => :delete, :class => 'alert'
     <br>
 = paginate @locations
