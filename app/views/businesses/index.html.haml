@@ -12,5 +12,5 @@
     = link_to "Edit", edit_business_path(business)
     = link_to "Show", business
     = link_to "Delete", business, :confirm => 'Are you sure?', :method => :delete, :class => 'alert'
-    <br>
+    %br
 = paginate @businesses

@@ -9,13 +9,13 @@
 
   = f.label :name
   = f.text_field :name, :maxlength => 150
-  <br>
+  %br
   = f.label :trade_name
   = f.text_field :trade_name, :maxlength => 150
-  <br>
+  %br
   = f.label :status
   = f.text_field :status, :maxlength => 150
-  <br>
+  %br
   = f.label :location_id
   = f.collection_select(:location_id, Location.location_collections, :id, :name, options ={:prompt=> "Select Location"})
   %br
