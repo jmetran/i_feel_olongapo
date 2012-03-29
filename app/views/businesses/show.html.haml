@@ -3,3 +3,7 @@
 = link_to "Back", businesses_path
 %p{ :id => "notice"}= notice
 %h1= @business.name
+%h1 Categories
+- for category in @business.categories
+  = category.name
+  %br
