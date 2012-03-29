@@ -1,0 +1,7 @@
+- initialize_meta(:title => "Home", :keywords => "home", :description => "this is a home page")
+
+= link_to "Back", projects_path
+%p{ :id => "notice"}= notice
+%h1= @project.name
+%h1 Tasks
+= @project.tasks.map(&:name).join(",")

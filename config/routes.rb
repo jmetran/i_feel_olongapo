@@ -11,6 +11,7 @@ IFeelOlongapo::Application.routes.draw do
 
   resources :categories
   resources :locations
+  resources :projects
   root :to => "home#index"
 
   # The priority is based upon order of creation:

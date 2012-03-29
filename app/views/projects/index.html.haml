@@ -1,0 +1,14 @@
+- initialize_meta(:title => "Home", :keywords => "home", :description => "this is a home page")
+= link_to "Home", "/"
+= link_to "New", new_project_path
+%p{ :id => "notice"}= notice
+%h1 Projects
+
+- for project in @projects
+    = project.name
+    = project.tasks.map(&:name).join(",")
+    = link_to "Edit", edit_project_path(project)
+    = link_to "Show", project
+    = link_to "Delete", project, :confirm => 'Are you sure?', :method => :delete, :class => 'alert'
+    %br
+= paginate @projects
