@@ -12,6 +12,7 @@ gem "haml"
 gem "friendly_id", "~> 4.0.1" #Permalink
 gem "kaminari" #Pagination
 gem "tire" #Client for SearchElastic
+gem "time_diff"
 
 
 # Gems used only for assets and not required
@@ -31,7 +32,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+ gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
